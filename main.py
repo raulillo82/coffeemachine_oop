@@ -13,6 +13,7 @@ while machine_working:
         machine_working = False
     elif option == "report":
         coffeemachine.report()
+        money.report()
     else:
         order = items.find_drink(option)
         if order != None:
