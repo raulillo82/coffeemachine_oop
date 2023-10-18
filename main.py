@@ -17,10 +17,7 @@ while machine_working:
     else:
         order = items.find_drink(option)
         if order != None:
-            if coffeemachine.is_resource_sufficient(order):
-                if money.make_payment(order.cost):
+            if coffeemachine.is_resource_sufficient(order) and money.make_payment(order.cost):
                     coffeemachine.make_coffee(order)
-            else:
-                print("Sorry, insuficient resources!")
         else:
             print(f"Please enter a valid order from {items.get_items()}")
